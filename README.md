@@ -2,7 +2,7 @@
 
 Elevinar menjalankan webinar seperti pertunjukan. Pertunjukan #07 "Presentasi yang Didengar": empat babak, 300 kursi, Sabtu 21 November 2026, daring.
 
-**Demo live:** https://landing-elevinar.vercel.app
+**Demo live:** https://landing-elevinar.pintuweb.id
 
 ![Tangkapan layar Elevinar](public/og.jpg)
 

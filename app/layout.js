@@ -7,10 +7,10 @@ import "./globals.css";
 const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], weight: ["600", "700", "800", "900"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Elevinar","description":"Webinar yang dijalankan seperti pertunjukan","url":"https://landing-elevinar.vercel.app","inLanguage":"id"};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Elevinar","description":"Webinar yang dijalankan seperti pertunjukan","url":"https://landing-elevinar.pintuweb.id","inLanguage":"id"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-elevinar.vercel.app"),
+  metadataBase: new URL("https://landing-elevinar.pintuweb.id"),
   title: { default: "Elevinar — Presentasi yang Didengar", template: "%s — Elevinar" },
   description: "Elevinar menjalankan webinar seperti pertunjukan. Pertunjukan #07 \"Presentasi yang Didengar\": empat babak, 300 kursi, Sabtu 21 November 2026, daring.",
   applicationName: "Elevinar",
@@ -18,11 +18,11 @@ export const metadata = {
   authors: [{ name: "Elevinar" }],
   creator: "Elevinar",
   publisher: "Elevinar",
-  alternates: { canonical: "https://landing-elevinar.vercel.app" },
+  alternates: { canonical: "https://landing-elevinar.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-elevinar.vercel.app",
+    url: "https://landing-elevinar.pintuweb.id",
     siteName: "Elevinar",
     title: "Elevinar — Presentasi yang Didengar",
     description: "Elevinar menjalankan webinar seperti pertunjukan. Pertunjukan #07 \"Presentasi yang Didengar\": empat babak, 300 kursi, Sabtu 21 November 2026, daring.",
