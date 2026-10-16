@@ -24,7 +24,7 @@ export default function Pembicara() {
           {PEMBICARA.map((p) => (
             <li key={p.slug} className="w-[82%] shrink-0 snap-center md:w-auto">
               <article className="flex h-full flex-col items-center border border-chalk/12 bg-stage-2 px-5 pt-7 pb-6 text-center sm:px-6 sm:pt-9 sm:pb-7">
-                <Sorot inisial={p.inisial} />
+                <Sorot slug={p.slug} />
                 <p className="cue mt-5 text-spot sm:mt-6">Babak {p.babak}</p>
                 <h3 className="mt-2 text-xl font-extrabold">{p.nama}</h3>
                 <p className="mt-1 text-sm text-chalk/80">{p.peran}</p>

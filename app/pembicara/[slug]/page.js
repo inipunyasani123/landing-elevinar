@@ -35,7 +35,7 @@ export default async function HalamanPembicara({ params }) {
         <div aria-hidden="true" className="spotlight absolute inset-x-0 top-0 h-[30rem]" />
         <div className="relative mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[auto_minmax(0,1fr)]">
           <div className="mx-auto md:mx-0">
-            <Sorot inisial={p.inisial} ukuran="lg" />
+            <Sorot slug={p.slug} alt={`Ilustrasi potret ${p.nama}`} ukuran="lg" priority />
           </div>
           <div>
             <p className="cue text-spot">
@@ -95,7 +95,7 @@ export default async function HalamanPembicara({ params }) {
             {lain.map((x) => (
               <li key={x.slug}>
                 <Link href={`/pembicara/${x.slug}`} className="flex items-center gap-5 border border-chalk/12 p-5 transition-colors hover:border-spot/60">
-                  <span className="font-[family-name:var(--font-archivo)] text-2xl font-extrabold text-spot">{x.inisial}</span>
+                  <Sorot slug={x.slug} ukuran="sm" />
                   <span>
                     <span className="block font-semibold text-chalk">{x.nama}</span>
                     <span className="text-sm">Babak {x.babak} · {x.peran}</span>
