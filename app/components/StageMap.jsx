@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { BARISAN } from '@/lib/acara';
 
 /* ============================================================================
@@ -14,11 +11,11 @@ const baris = BARISAN;
 
 export default function StageMap() {
   return (
-    <section id="panggung" className="relative scroll-mt-16 overflow-hidden bg-stage py-20 md:py-28">
+    <section id="panggung" className="relative scroll-mt-16 overflow-hidden bg-stage py-16 md:py-28">
       <div aria-hidden="true" className="spotlight-soft absolute inset-x-0 top-0 h-96" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
+        <div className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
           <p className="cue mb-5 text-spot">Denah Panggung</p>
           <h2 className="text-[2rem] leading-[1.08] font-extrabold md:text-[2.8rem]">
             Yang membedakan tiket bukan harganya, tapi jaraknya
@@ -47,15 +44,11 @@ export default function StageMap() {
         </div>
 
         {/* Barisan kursi */}
-        <div className="space-y-4">
-          {baris.map((b, i) => (
-            <motion.article
+        <div className="space-y-3 sm:space-y-4">
+          {baris.map((b) => (
+            <article
               key={b.kode}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="grid gap-6 border border-chalk/12 bg-stage-2 p-6 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)_auto] lg:items-center lg:gap-10"
+              className="grid gap-4 border border-chalk/12 bg-stage-2 p-5 sm:gap-6 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)_auto] lg:items-center lg:gap-10"
             >
               <div>
                 <div className="flex items-baseline gap-3">
@@ -71,7 +64,7 @@ export default function StageMap() {
                 <p className="cue mt-3 text-dust">{b.kursi} kursi</p>
 
                 {/* Deretan kursi kecil sebagai penanda kepadatan */}
-                <div aria-hidden="true" className="mt-4 flex flex-wrap gap-1">
+                <div aria-hidden="true" className="mt-3 flex flex-wrap gap-1 sm:mt-4">
                   {Array.from({ length: 14 }).map((_, k) => (
                     <span
                       key={k}
@@ -82,7 +75,7 @@ export default function StageMap() {
                 </div>
               </div>
 
-              <ul className="space-y-2.5">
+              <ul className="space-y-2 sm:space-y-2.5">
                 {b.dapat.map((d) => (
                   <li key={d} className="flex gap-3 text-sm leading-relaxed text-chalk/90">
                     <span aria-hidden="true" className="mt-2 h-1 w-3 shrink-0 bg-spot" />
@@ -91,7 +84,7 @@ export default function StageMap() {
                 ))}
               </ul>
 
-              <div className="flex items-center justify-between gap-6 border-t border-chalk/12 pt-5 lg:flex-col lg:items-end lg:border-t-0 lg:pt-0">
+              <div className="flex items-center justify-between gap-6 border-t border-chalk/12 pt-4 sm:pt-5 lg:flex-col lg:items-end lg:border-t-0 lg:pt-0">
                 <span className="text-xl font-extrabold text-chalk">{b.harga}</span>
                 <a
                   href={`/?kursi=${b.kode}#daftar`}
@@ -100,7 +93,7 @@ export default function StageMap() {
                   Ambil kursi {b.kode}
                 </a>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 

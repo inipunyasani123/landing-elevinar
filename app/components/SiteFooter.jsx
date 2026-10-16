@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ACARA, PEMBICARA } from '@/lib/acara';
+import { ACARA, PEMBICARA, jadwal } from '@/lib/acara';
 
 export default function SiteFooter() {
+  const j = jadwal();
   return (
     <footer className="curtain-top bg-stage-2 print:hidden">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[minmax(0,1.3fr)_repeat(2,minmax(0,1fr))]">
@@ -9,7 +10,7 @@ export default function SiteFooter() {
           <p className="font-[family-name:var(--font-archivo)] text-xl font-extrabold text-chalk">Elevinar</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed">
             Webinar yang dijalankan seperti pertunjukan. Pertunjukan #{ACARA.nomor}: {ACARA.judul} —{' '}
-            {ACARA.hari}.
+            {j.hari}.
           </p>
         </div>
         <nav aria-label="Tautan pertunjukan">

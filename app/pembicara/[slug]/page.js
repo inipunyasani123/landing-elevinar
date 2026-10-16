@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ACARA, PEMBICARA, SITE, babakByKode, pembicaraBySlug } from '@/lib/acara';
+import { ACARA, PEMBICARA, SITE, babakByKode, jadwal, pembicaraBySlug } from '@/lib/acara';
 import Sorot from '../../components/Sorot';
+
+/* Deskripsi meta maksimal 155 karakter, dipotong di batas kata. */
+const ringkas = (t, n = 155) => (t.length <= n ? t : `${t.slice(0, t.lastIndexOf(' ', n - 1)).replace(/[,.;:]$/, '')}…`);
 
 export function generateStaticParams() {
   return PEMBICARA.map((p) => ({ slug: p.slug }));
@@ -12,8 +15,8 @@ export async function generateMetadata({ params }) {
   const p = pembicaraBySlug(slug);
   if (!p) return {};
   return {
-    title: `${p.nama}, ${p.peran}`,
-    description: `${p.nama} membawakan Babak ${p.babak} di Elevinar Pertunjukan #${ACARA.nomor}. ${p.ringkas}`,
+    title: `${p.nama} · Babak ${p.babak}`,
+    description: ringkas(`${p.nama} membawakan Babak ${p.babak} “${babakByKode(p.babak).judul}”. “${p.kutipan}”`),
     alternates: { canonical: `${SITE}/pembicara/${p.slug}` },
   };
 }
@@ -23,6 +26,7 @@ export default async function HalamanPembicara({ params }) {
   const p = pembicaraBySlug(slug);
   if (!p) notFound();
   const b = babakByKode(p.babak);
+  const j = jadwal();
   const lain = PEMBICARA.filter((x) => x.slug !== p.slug);
 
   return (
@@ -67,7 +71,7 @@ export default async function HalamanPembicara({ params }) {
           </div>
 
           <aside className="h-fit border border-chalk/12 bg-stage p-6">
-            <p className="cue text-spot">Babak {b.kode} · {ACARA.hari}</p>
+            <p className="cue text-spot">Babak {b.kode} · {j.hari}</p>
             <p className="mt-4 font-[family-name:var(--font-archivo)] text-3xl font-extrabold text-chalk tabular-nums">
               {b.mulai}–{b.selesai}
             </p>

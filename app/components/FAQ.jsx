@@ -2,8 +2,8 @@ import { FAQ as DAFTAR } from '@/lib/acara';
 
 export default function FAQ() {
   return (
-    <section id="tanya" className="scroll-mt-16 bg-stage py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+    <section id="tanya" className="scroll-mt-16 bg-stage py-16 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div>
           <p className="cue mb-5 text-spot">Sebelum masuk</p>
           <h2 className="text-[2rem] leading-[1.08] font-extrabold md:text-[2.6rem]">

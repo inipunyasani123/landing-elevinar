@@ -81,7 +81,27 @@
 }
 
 /* --------------------------------------------------------------------------
-   5. Aksesibilitas
+   5. Masuk-layar hero — CSS murni (dulu framer-motion), jadi isi tetap
+      terlihat walau JavaScript belum jalan dan tidak menunda LCP.
+   -------------------------------------------------------------------------- */
+@keyframes naik {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.naik {
+  animation: naik 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.naik-2 {
+  animation-delay: 0.08s;
+}
+.naik-3 {
+  animation-delay: 0.16s;
+}
+
+/* --------------------------------------------------------------------------
+   6. Aksesibilitas
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ACARA, BABAK, JEDA, PEMBICARA, SETELAH, SITE, TATA_TERTIB, pembicaraBySlug } from '@/lib/acara';
+import { ACARA, BABAK, JEDA, PEMBICARA, SETELAH, SITE, TATA_TERTIB, jadwal, pembicaraBySlug } from '@/lib/acara';
 import CetakButton from '../components/CetakButton';
 
 export const metadata = {
@@ -27,6 +27,7 @@ function Titik({ kiri, kanan }) {
 }
 
 export default function BukuAcara() {
+  const j = jadwal();
   return (
     <main className="bg-stage pt-16">
       <header className="relative overflow-hidden px-6 pt-16 pb-14 text-center print:hidden">
@@ -35,7 +36,7 @@ export default function BukuAcara() {
           <p className="cue text-spot">Buku acara · Pertunjukan #{ACARA.nomor}</p>
           <h1 className="mt-5 text-4xl leading-[1.02] font-extrabold md:text-6xl">{ACARA.judul}</h1>
           <p className="mx-auto mt-5 max-w-lg leading-relaxed">
-            {ACARA.hari} · pintu dibuka {ACARA.pintu} · {ACARA.kursi} kursi daring
+            {j.hari} · pintu dibuka {ACARA.pintu} · {ACARA.kursi} kursi daring
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <CetakButton />
@@ -52,7 +53,7 @@ export default function BukuAcara() {
           <div className="border-b-2 border-stage pb-8 text-center">
             <p className="cue text-curtain">Elevinar mempersembahkan</p>
             <h2 className="mt-4 text-3xl font-extrabold text-stage sm:text-4xl">{ACARA.judul}</h2>
-            <p className="cue mt-4 text-stage/75">Pertunjukan #{ACARA.nomor} · {ACARA.hari}</p>
+            <p className="cue mt-4 text-stage/75">Pertunjukan #{ACARA.nomor} · {j.hari}</p>
           </div>
 
           <section aria-labelledby="susunan" className="mt-12">

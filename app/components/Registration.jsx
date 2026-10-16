@@ -5,7 +5,7 @@ import { ACARA, BARISAN } from '@/lib/acara';
 
 /* Formulir kursi. Tautan "Ambil kursi A" di denah panggung membawa ?kursi=A,
    jadi barisan itu sudah terpilih ketika pengunjung sampai di sini. */
-export default function Registration() {
+export default function Registration({ hari }) {
   const [kursi, setKursi] = useState('B');
   const [terkirim, setTerkirim] = useState(null);
 
@@ -24,8 +24,8 @@ export default function Registration() {
   };
 
   return (
-    <section id="daftar" className="scroll-mt-16 bg-stage-2 py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <section id="daftar" className="scroll-mt-16 bg-stage-2 py-16 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
         <div>
           <p className="cue mb-5 text-spot">Loket</p>
           <h2 className="text-[2rem] leading-[1.08] font-extrabold md:text-[2.6rem]">
@@ -36,7 +36,7 @@ export default function Registration() {
             dikirim ke surel Anda sehari sebelum pertunjukan.
           </p>
           <dl className="mt-8 space-y-3 border-t border-chalk/12 pt-6 text-sm">
-            <div className="flex justify-between gap-4"><dt>Hari</dt><dd className="text-chalk">{ACARA.hari}</dd></div>
+            <div className="flex justify-between gap-4"><dt>Hari</dt><dd className="text-chalk">{hari}</dd></div>
             <div className="flex justify-between gap-4"><dt>Pintu dibuka</dt><dd className="text-chalk">{ACARA.pintu}</dd></div>
             <div className="flex justify-between gap-4"><dt>Tempat</dt><dd className="text-right text-chalk">{ACARA.tempat}</dd></div>
           </dl>
@@ -65,11 +65,11 @@ export default function Registration() {
             <form onSubmit={kirim} className="space-y-6">
               <fieldset>
                 <legend className="cue mb-4 text-chalk">Barisan</legend>
-                <div className="grid gap-3 sm:grid-cols-3">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {BARISAN.map((b) => (
                     <label
                       key={b.kode}
-                      className={`cursor-pointer border p-4 transition-colors ${
+                      className={`cursor-pointer border p-3 transition-colors has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-spot sm:p-4 ${
                         kursi === b.kode ? 'border-spot bg-spot/10' : 'border-chalk/15 hover:border-chalk/40'
                       }`}
                     >
@@ -81,8 +81,8 @@ export default function Registration() {
                         onChange={() => setKursi(b.kode)}
                         className="sr-only"
                       />
-                      <span className="cue block text-spot">Barisan {b.kode}</span>
-                      <span className="mt-2 block font-extrabold text-chalk">{b.harga}</span>
+                      <span className="cue block tracking-[0.1em] text-spot sm:tracking-[0.2em]">Barisan {b.kode}</span>
+                      <span className="mt-2 block text-[0.8rem] font-extrabold whitespace-nowrap text-chalk sm:text-base">{b.harga}</span>
                       <span className="mt-1 block text-xs">{b.kursi} kursi</span>
                     </label>
                   ))}
