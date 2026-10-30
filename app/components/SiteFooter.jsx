@@ -15,19 +15,19 @@ export default function SiteFooter() {
         </div>
         <nav aria-label="Tautan pertunjukan">
           <p className="cue mb-4 text-spot">Pertunjukan</p>
-          <ul className="space-y-2.5 text-sm">
-            <li><Link href="/#panggung" className="hover:text-chalk">Denah panggung</Link></li>
-            <li><Link href="/#babak" className="hover:text-chalk">Susunan babak</Link></li>
-            <li><Link href="/buku-acara" className="hover:text-chalk">Buku acara</Link></li>
-            <li><Link href="/#daftar" className="hover:text-chalk">Ambil kursi</Link></li>
+          <ul className="space-y-0.5 text-sm">
+            <li><Link href="/#panggung" className="inline-block py-3 hover:text-chalk">Denah panggung</Link></li>
+            <li><Link href="/#babak" className="inline-block py-3 hover:text-chalk">Susunan babak</Link></li>
+            <li><Link href="/buku-acara" className="inline-block py-3 hover:text-chalk">Buku acara</Link></li>
+            <li><Link href="/#daftar" className="inline-block py-3 hover:text-chalk">Ambil kursi</Link></li>
           </ul>
         </nav>
         <nav aria-label="Pembicara">
           <p className="cue mb-4 text-spot">Di balik layar</p>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-0.5 text-sm">
             {PEMBICARA.map((p) => (
               <li key={p.slug}>
-                <Link href={`/pembicara/${p.slug}`} className="hover:text-chalk">
+                <Link href={`/pembicara/${p.slug}`} className="inline-block py-3 hover:text-chalk">
                   {p.nama}
                 </Link>
               </li>

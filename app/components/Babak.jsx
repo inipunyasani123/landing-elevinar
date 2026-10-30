@@ -40,7 +40,7 @@ export default function Babak() {
                     <p className="mt-3 text-sm text-chalk/85 md:mt-4">
                       Di bawah lampu:{' '}
                       {p ? (
-                        <Link href={`/pembicara/${p.slug}`} className="font-semibold text-spot underline decoration-spot/40 underline-offset-4 hover:decoration-spot">
+                        <Link href={`/pembicara/${p.slug}`} className="inline-block py-2 font-semibold text-spot underline decoration-spot/40 underline-offset-4 hover:decoration-spot">
                           {p.nama}
                         </Link>
                       ) : (

@@ -72,7 +72,7 @@ export default function BukuAcara() {
                         <h3 className="text-xl font-extrabold text-stage">{b.judul}</h3>
                         <p className="mt-1 text-sm font-semibold text-stage/75">
                           {p ? (
-                            <Link href={`/pembicara/${p.slug}`} className="underline decoration-stage/30 underline-offset-4 hover:decoration-stage">{p.nama}</Link>
+                            <Link href={`/pembicara/${p.slug}`} className="inline-block py-2 underline decoration-stage/30 underline-offset-4 hover:decoration-stage">{p.nama}</Link>
                           ) : 'Panel ketiga pembicara'}
                         </p>
                         <p className="mt-3 leading-relaxed text-stage/85">{b.sinopsis}</p>

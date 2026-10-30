@@ -88,7 +88,7 @@ export default function StageMap() {
                 <span className="text-xl font-extrabold text-chalk">{b.harga}</span>
                 <a
                   href={`/?kursi=${b.kode}#daftar`}
-                  className="cue border-b border-spot/50 pb-1 text-spot transition-colors hover:border-spot"
+                  className="cue inline-flex min-h-11 items-center border-b border-spot/50 text-spot transition-colors hover:border-spot"
                 >
                   Ambil kursi {b.kode}
                 </a>

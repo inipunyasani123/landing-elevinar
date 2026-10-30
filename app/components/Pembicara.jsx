@@ -34,7 +34,7 @@ export default function Pembicara() {
                 </blockquote>
                 <Link
                   href={`/pembicara/${p.slug}`}
-                  className="cue mt-auto pt-6 text-spot underline decoration-spot/40 underline-offset-[6px] hover:decoration-spot"
+                  className="cue mt-auto inline-block py-3 text-spot underline decoration-spot/40 underline-offset-[6px] hover:decoration-spot"
                 >
                   Profil {p.nama.split(' ')[0]}
                 </Link>

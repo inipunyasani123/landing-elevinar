@@ -39,7 +39,7 @@ export default async function HalamanPembicara({ params }) {
           </div>
           <div>
             <p className="cue text-spot">
-              <Link href="/#pembicara" className="hover:text-spot-soft">Di balik layar</Link> · Babak {p.babak}
+              <Link href="/#pembicara" className="inline-block py-3 hover:text-spot-soft">Di balik layar</Link> · Babak {p.babak}
             </p>
             <h1 className="mt-4 text-4xl leading-[1.02] font-extrabold md:text-6xl">{p.nama}</h1>
             <p className="mt-3 text-lg text-chalk/85">{p.peran}</p>
@@ -81,7 +81,7 @@ export default async function HalamanPembicara({ params }) {
             <Link href="/#daftar" className="mt-6 inline-flex w-full justify-center bg-spot py-3.5 text-sm font-bold text-stage hover:bg-spot-soft">
               Ambil kursi untuk babak ini
             </Link>
-            <Link href="/buku-acara" className="cue mt-4 block text-center text-dust hover:text-chalk">
+            <Link href="/buku-acara" className="cue mt-4 block py-3 text-center text-dust hover:text-chalk">
               Lihat buku acara
             </Link>
           </aside>
