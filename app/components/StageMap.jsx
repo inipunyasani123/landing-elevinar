@@ -98,7 +98,7 @@ export default function StageMap() {
         </div>
 
         <p className="cue mt-8 text-center leading-[1.7] text-dust">
-          Harga dan jumlah kursi di atas adalah contoh untuk keperluan purwarupa desain.
+          Harga dan jumlah kursi di atas hanya gambaran, bukan penawaran sungguhan.
         </p>
       </div>
     </section>

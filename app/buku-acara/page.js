@@ -128,7 +128,7 @@ export default function BukuAcara() {
           </section>
 
           <p className="cue mt-16 text-center leading-[1.7] text-stage/70">
-            Nama, jadwal, dan harga dalam buku acara ini adalah contoh untuk purwarupa desain.
+            Nama, jadwal, dan harga dalam buku acara ini hanya gambaran, bukan penawaran sungguhan.
           </p>
         </article>
       </div>

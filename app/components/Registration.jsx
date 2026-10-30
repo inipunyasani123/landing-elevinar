@@ -50,7 +50,7 @@ export default function Registration({ hari }) {
                 Terima kasih, {terkirim.nama || 'penonton'}.
               </p>
               <p className="mt-3 leading-relaxed">
-                Ini purwarupa desain, jadi tidak ada kursi yang benar-benar dipesan dan tidak ada
+                Ini hanya gambaran, jadi tidak ada kursi yang benar-benar dipesan dan tidak ada
                 surel yang dikirim.
               </p>
               <button
@@ -110,7 +110,7 @@ export default function Registration({ hari }) {
               <button type="submit" className="w-full bg-spot py-4 text-sm font-bold text-stage transition-colors hover:bg-spot-soft">
                 Ambil kursi {pilih.kode} · {pilih.harga}
               </button>
-              <p className="text-xs leading-relaxed">Purwarupa desain — formulir ini tidak mengirim data ke mana pun.</p>
+              <p className="text-xs leading-relaxed">Formulir ini hanya gambaran dan tidak mengirim data ke mana pun.</p>
             </form>
           )}
         </div>

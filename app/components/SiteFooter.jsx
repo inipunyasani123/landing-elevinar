@@ -37,7 +37,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-chalk/10">
         <p className="cue mx-auto max-w-6xl px-6 py-6 leading-[1.7]">
-          © 2026 Elevinar · Nama, jadwal, dan harga di situs ini adalah contoh untuk purwarupa desain.
+          © 2026 Elevinar · Nama, jadwal, dan harga di situs ini hanya gambaran, bukan penawaran sungguhan.
         </p>
       </div>
     </footer>
